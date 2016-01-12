@@ -21,6 +21,10 @@
 *.exp
 *.make
 *.rc
+*.pdb
+*.suo
+*.ilk
+*.lib
 
 # Compiled source #
 ###################
