@@ -44,12 +44,20 @@ void ofApp::keyPressed(int key)
 		
 		for (int h = 0; h < Kogels.size(); h++)
 		{
-			
+			// Hello Reed
+			// Here is the problem 
+			// I try to code
+			// when you press button 32 (spacebare)
+			// Make a new kogel (Kogel is Dutch for bullet) push it in a vector 
+			// and than I want to give the kogel a force in the direction where the kanon (kanon is Dutch for Cannon) is pionting.
+			// I really don't now to tell the kogel where the kanon is pionting ?
+
+			// I was thinking it was something with rotate function of the translate function I used but only wrong thing are happening.
+			// Sorry that I writte my code I half English and Dutch, but I hope you understand it. 
+			// Thanks so much for helping !!! really awesome 
+
 			ofVec2f force;
-			force.set(0.02,0.02); // Hier zitten de problemen !!!!!!!!!! 
-			// Hoe in godsnaam laat ik de computer weten in welke richting de kracht moet zijn
-			// Als je met de pijltjes toetsen de buis van kanon beweegt uit die richting moet de kogel ook komen
-			// maar hoe ??????
+			force.set(0.02,0.02); // Is must be something else but what ?? 
 			force *= 10;
 			Kogels[h].applyForce(force);
 		}
