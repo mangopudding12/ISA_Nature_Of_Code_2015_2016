@@ -18,6 +18,5 @@ class ofApp : public ofBaseApp{
 		int hoeveelheid; 
 		int plusEEN; 
 		int toets;
-
 		Kanon Kanons;
 };
