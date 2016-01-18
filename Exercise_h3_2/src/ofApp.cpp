@@ -11,7 +11,7 @@ void ofApp::update()
 {
 	for (int h = 0; h < Kogels.size(); h++)
 	{
-		Kogels[h].move(); 
+		Kogels[h].move();
 	}
 
 	Kanons.keyPressed(toets); // Zorgen dat kanon reageert op de toetsen 
@@ -37,11 +37,27 @@ void ofApp::keyPressed(int key)
 	if (key == 32)
 	{
 		Kogel newKogel;
-		newKogel.setup(Kanons.Location); 
+		newKogel.setup(Kanons.Location);
+        
+        // the force and angle of each bullet should be set ONCE before going out/push into vector
+        // because bullet shouldn't change direction/speed, unless there are outside force like wind
+        
+        // we need some trigonometry here to set the angle
+        // I mapped it to mouseX here but ultimately should be a variable that plugged with the cannon
+        float angle = ofMap(mouseX, 0 , ofGetWidth(), 0, TWO_PI);
+        // angle in Radian not degree
+        ofVec2f force;
+        force.set(0.02*cos(angle),0.02*sin(angle)); //just multiply with amplitude to set direction
+        force *= 100;
+        newKogel.applyForce(force);
+        // set here! if you do this down in the for loop when you fire ofVec2f force will be applied to *every* bullet
+        // or you can avoid it by making another vector<ofVec2f> forces; but I think it's quite redundant
+        
 		Kogels.push_back(newKogel);
+        // so this bullet have its own force set in its acceleration already, let move() do its work!
 
 		
-		
+		// you don't really even need the loop here
 		for (int h = 0; h < Kogels.size(); h++)
 		{
 			// Hello Reed
@@ -56,10 +72,6 @@ void ofApp::keyPressed(int key)
 			// Sorry that I writte my code I half English and Dutch, but I hope you understand it. 
 			// Thanks so much for helping !!! really awesome 
 
-			ofVec2f force;
-			force.set(0.02,0.02); // Is must be something else but what ?? 
-			force *= 10;
-			Kogels[h].applyForce(force);
 		}
 	}
 }
