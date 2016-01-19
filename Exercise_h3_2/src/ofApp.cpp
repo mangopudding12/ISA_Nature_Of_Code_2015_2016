@@ -49,14 +49,15 @@ void ofApp::keyPressed(int key)
         
       
 		// Hey Reed, 
-		// Thanks for helping 
-		// But I still have the same problem
-		// I still don't now what must stand at mouseX place
-		// Because When I set my Kanons.draaien on the place weird thing are happening. 
-		// How can I tell this function my Canon (kanons) stands at this position.
-		// so please shoot the kogel (bullet) at that position ?
-		// I understand your mouseX example but I still lost 
-
+		// AAAAAA it works, I am so happy 
+		// Thanks so much for helping !!! |
+		// But I really don't understand why it works, can you explain me ? 
+		// I put Kanons.draaien inside the map function because I was thinking that is only number I have of the rotation of the kanon
+		// I put 0 360 inside the function because I was thing mm a whole circle is 360 graden
+		// And the TWO_PI is yours.
+		// But why does it works so good ? 
+		// What is happening there ? 
+		// I am really curious to know :) 
 
 
         float angle = ofMap(Kanons.draaien, 0 , 360, 0, TWO_PI);
