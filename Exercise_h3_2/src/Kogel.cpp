@@ -1,9 +1,11 @@
 #include "Kogel.h"
 
 
-void Kogel:: setup (ofVec2f Locatie_)
+void Kogel:: setup (float Locatie_x,float Locatie_y)
 {
-	Location = Locatie_;
+	Location.x = Locatie_x;
+	Location.y = Locatie_y;
+	
 	Acceleration.set(0,0);
 	Velocity.set(0,0);
 	topsnelheid = 5; 

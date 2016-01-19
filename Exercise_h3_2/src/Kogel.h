@@ -5,7 +5,7 @@
 class Kogel 
 {
 	public: 
-		void setup(ofVec2f Locatie_); 
+		void setup(float Locatie_x,float Locatie_y); 
 		void applyForce(ofVec2f force);
 		void display(); 
 		void move();

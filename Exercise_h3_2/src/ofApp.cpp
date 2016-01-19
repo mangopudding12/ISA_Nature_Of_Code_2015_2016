@@ -12,9 +12,18 @@ void ofApp::update()
 	for (int h = 0; h < Kogels.size(); h++)
 	{
 		Kogels[h].move(); 
+
+		if (Kogels[h].Location.x < 100 || Kogels[h].Location.x > (ofGetWidth()-100) || Kogels[h].Location.y < 100 || Kogels[h].Location.y > (ofGetHeight()-100))
+		{
+				Kogels.erase(Kogels.begin()+h);  
+		}
 	}
 
+	
+
 	Kanons.keyPressed(toets); // Zorgen dat kanon reageert op de toetsen 
+
+	
 }
 
 //--------------------------------------------------------------
@@ -32,35 +41,32 @@ void ofApp::draw()
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key)
 {
-	toets = key;	// Zorgen dat toets wordt omgezet naar de toets die dan wordt in gedrukt.
-
+	toets = key;	
 	if (key == 32)
 	{
-		Kogel newKogel;
-		newKogel.setup(Kanons.Location); 
+			Kogel newKogel;
+			newKogel.setup(Kanons.Location.x-Kanons.radius/2,(Kanons.Location.y)-Kanons.radius/2);
+        
+      
+		// Hey Reed, 
+		// Thanks for helping 
+		// But I still have the same problem
+		// I still don't now what must stand at mouseX place
+		// Because When I set my Kanons.draaien on the place weird thing are happening. 
+		// How can I tell this function my Canon (kanons) stands at this position.
+		// so please shoot the kogel (bullet) at that position ?
+		// I understand your mouseX example but I still lost 
+
+
+
+        float angle = ofMap(Kanons.draaien, 0 , 360, 0, TWO_PI);
+        
+        ofVec2f force;
+        force.set(cos(angle),sin(angle)); 
+        force *= 0.9; // This is the speed of de bullet 
+        newKogel.applyForce(force);
+       
 		Kogels.push_back(newKogel);
-
-		
-		
-		for (int h = 0; h < Kogels.size(); h++)
-		{
-			// Hello Reed
-			// Here is the problem 
-			// I try to code
-			// when you press button 32 (spacebare)
-			// Make a new kogel (Kogel is Dutch for bullet) push it in a vector 
-			// and than I want to give the kogel a force in the direction where the kanon (kanon is Dutch for Cannon) is pionting.
-			// I really don't now to tell the kogel where the kanon is pionting ?
-
-			// I was thinking it was something with rotate function of the translate function I used but only wrong thing are happening.
-			// Sorry that I writte my code I half English and Dutch, but I hope you understand it. 
-			// Thanks so much for helping !!! really awesome 
-
-			ofVec2f force;
-			force.set(0.02,0.02); // Is must be something else but what ?? 
-			force *= 10;
-			Kogels[h].applyForce(force);
-		}
 	}
 }
 
