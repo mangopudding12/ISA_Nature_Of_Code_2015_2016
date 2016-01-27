@@ -9,6 +9,7 @@ void Raket:: setup(float Location_x,float Location_y, int radius_)
 
 	draaien = 0;
 	weerstand = 0.998; 
+	kracht = false;
 }
 
 void Raket:: OUTscreen()
@@ -40,9 +41,9 @@ void Raket::sturen(int key_)
 	// Pijltjes toetsen 
 	if (key_ == 356)
 	{
-		draaien += -0.03;
+		draaien += -0.09;
 	} else if (key_ == 358){
-		draaien += 0.03;
+		draaien += 0.09;
 	} 
 }
 
@@ -65,11 +66,18 @@ void Raket::display()
 		ofTranslate(Location.x,Location.y);
 
 		ofRotate(draaien);
-		ofSetColor(100,255,140);
-
-		ofRect(-radius/4,radius/4,radius/2,radius/2);
-		ofRect(-radius/2,-radius/2,radius,radius);
 		
+		ofSetColor(70,255,100);
+		ofRect(-radius/2,-radius/2,radius,radius);
+
+		if (kracht == false)
+		{
+			ofSetColor(20,250,100);
+		} else { 
+			ofSetColor(200,50,80);
+		}
+		
+		ofRect(-radius,-radius/4,radius/4,radius/2);
 		ofRectMode(OF_RECTMODE_CENTER);
 		
 	ofPopMatrix();

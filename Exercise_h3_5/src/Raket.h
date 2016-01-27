@@ -19,6 +19,7 @@ class Raket
 		float weerstand;
 
 		float draaien;
+		bool kracht;
 
 	private: 
 };

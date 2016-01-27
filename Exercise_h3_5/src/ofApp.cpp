@@ -48,12 +48,14 @@ void ofApp::keyPressed(int key)
 	{	
 		for (int h = 0; h < Rakets.size(); h++)
 		{
-			float angle = Rakets[h].draaien - PI/4;
+			// Het omzetten van normale cijfer naar graden 
+			float angle = ofMap(Rakets[h].draaien, 0 , 360, 0, TWO_PI);
 
 			ofVec2f force_; 
 			force_.set(cos(angle),sin(angle));
 			force_ *= 0.1;
 			Rakets[h].applyForce(force_); 
+			Rakets[h].kracht = true;
 			cout << force_ << endl;
 		}
 	}
@@ -62,5 +64,10 @@ void ofApp::keyPressed(int key)
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key)
 {
+		for (int h = 0; h < Rakets.size(); h++)
+		{
+			Rakets[h].kracht = false;
+		}
+
 	toets = 0;
 }

@@ -48,18 +48,11 @@ void ofApp::keyPressed(int key)
 			newKogel.setup(Kanons.Location.x-Kanons.radius/2,(Kanons.Location.y)-Kanons.radius/2);
         
       
-		// Hey Reed, 
-		// AAAAAA it works, I am so happy 
-		// Thanks so much for helping !!! |
-		// But I really don't understand why it works, can you explain me ? 
-		// I put Kanons.draaien inside the map function because I was thinking that is only number I have of the rotation of the kanon
-		// I put 0 360 inside the function because I was thing mm a whole circle is 360 graden
-		// And the TWO_PI is yours.
-		// But why does it works so good ? 
-		// What is happening there ? 
-		// I am really curious to know :) 
+	
 
-
+		// Here happened's the magic !!!!! Now I understand a little bit 
+		// Who to say he the force must shoot in this direction :) 
+		// Super happy 
         float angle = ofMap(Kanons.draaien, 0 , 360, 0, TWO_PI);
         
         ofVec2f force;
