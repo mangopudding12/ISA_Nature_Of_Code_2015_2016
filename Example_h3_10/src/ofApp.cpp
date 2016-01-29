@@ -1,18 +1,37 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup()
+{
+	hoeveelheid = 1; 
+	ofSetFrameRate(25);
+
+		
+	for(int h = 0; h < hoeveelheid; h++)
+	{
+		pendel newSlangg;
+		newSlangg.setup();
+		pendell.push_back(newSlangg);
+	}
 
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
-
+void ofApp::update()
+{
+	for(int h = 0; h < pendell.size(); h++)
+	{
+		pendell[h].move(); 
+	}
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
-
+void ofApp::draw()
+{
+	for(int h = 0; h < pendell.size(); h++)
+	{
+		pendell[h].display(); 
+	}
 }
 
 //--------------------------------------------------------------
@@ -22,40 +41,5 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
 }
