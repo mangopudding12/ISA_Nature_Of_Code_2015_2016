@@ -30,6 +30,7 @@ void Rectt::bounce()
 {
 	
 	velocity += accelation; 
+	velocity.limit(2);
 	location += velocity; 
 
 	// Reset accelation 
@@ -77,7 +78,7 @@ void Rectt:: checkedge()
 		kleur = ofColor (ofRandom(100,255),ofRandom(0,150),ofRandom(100,255));
 		location.y =  ofGetHeight() - radius/2;
 
-		weerstandmuren.set(0.0f,velocity.y * 2.0f);
+		weerstandmuren.set(0.0f,velocity.y * 1.0f);
 		applyforce(weerstandmuren);
 	}
 }

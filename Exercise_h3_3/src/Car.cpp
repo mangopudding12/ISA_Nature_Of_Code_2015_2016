@@ -5,9 +5,9 @@ void Car:: setup(float Location_x,float Location_y, int radius_)
 	Location.set(Location_x,Location_y);
 	radius = radius_; 
 	Velocity.set(0,0);
-	Accelaration.set(0.001,0);
+	Accelaration.set(0.03,0);
 
-	topsnelheid = 3; 
+	topsnelheid = 8; 
 }
 
 void Car:: OUTscreen()

@@ -4,7 +4,7 @@
 void ofApp::setup()
 {
 	vissen.setup(); 
-	zwaartekracht.set(0,-0.02f);
+	zwaartekracht.set(0,-0.004f);
 	wind.set(0.01,0);
 
 	tijd = 0; 

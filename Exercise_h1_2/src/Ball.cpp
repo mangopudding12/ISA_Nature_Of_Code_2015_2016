@@ -13,7 +13,7 @@ void Stip :: setup()
 
 	// Hier gaan we de Vectors hun waardes geven
 	Location.set(ofRandom(0,ofGetWidth()),ofRandom(0,ofGetHeight()));
-	Speed.set(ofRandom(1,2),ofRandom(1,2));
+	Speed.set(ofRandom(10,15),ofRandom(10,15));
 }
 
 

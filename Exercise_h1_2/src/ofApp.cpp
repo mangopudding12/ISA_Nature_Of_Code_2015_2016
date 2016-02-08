@@ -2,8 +2,9 @@
 
 //--------------------------------------------------------------
 
-void ofApp::setup(){
-
+void ofApp::setup()
+{
+	ofSetFrameRate(40);
 	stippie.setup(); 
 }
 

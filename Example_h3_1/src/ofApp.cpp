@@ -7,7 +7,7 @@ void ofApp::setup()
 	myfont.loadFont("spahrtyg.ttf", 50);
 
 	graden = 0;
-	accelaration = 0.0001;
+	accelaration = 0.05;
 	velocity = 0; 
 }
 

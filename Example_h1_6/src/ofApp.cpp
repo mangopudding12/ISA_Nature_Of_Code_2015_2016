@@ -25,10 +25,10 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-	//ofSetColor(200,100,150); 
-	//ofRect(0,400,grotemagnitude,10);
+	ofSetColor(200,100,150); 
+	ofRect(0,400,grotemagnitude,10);
 	
-	
+	ofSetLineWidth(4);
 	ofTranslate(ofGetWidth()/2,ofGetHeight()/2);
 	ofLine(0,0,locatie.x,locatie.y); // zet de ofline in het midden van het scherm 
 }

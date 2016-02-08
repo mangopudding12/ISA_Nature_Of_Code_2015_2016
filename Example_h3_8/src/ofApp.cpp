@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-	ofSetFrameRate(20);
+	ofSetFrameRate(10);
 
 	angle = 0; 
 	velocity_angle = 0.4;

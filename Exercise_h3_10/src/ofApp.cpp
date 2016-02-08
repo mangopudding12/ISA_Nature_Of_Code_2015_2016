@@ -32,6 +32,6 @@ void ofApp::draw()
 {
 	for(int h = 0; h < Slangen.size(); h++)
 	{
-		Slangen[h].display(50,ofGetHeight()/2); 
+		Slangen[h].display(ofGetWidth()/2-100,ofGetHeight()/2); 
 	}
 }

@@ -9,7 +9,7 @@ void ofApp::setup()
 	Location.set(0,0);
 	straal = 0; 
 	graden = (2*PI)/4;
-	Accelarion_graden = 0.000001;
+	Accelarion_graden = 0.00001;
 
 	draaien =  false; 
 }

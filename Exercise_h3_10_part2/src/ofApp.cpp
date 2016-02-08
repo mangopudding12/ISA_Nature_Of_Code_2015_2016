@@ -4,7 +4,7 @@
 void ofApp::setup()
 {
 	hoeveelheid = 7; 
-	ofSetFrameRate(25);
+	ofSetFrameRate(40);
 
 	
 		

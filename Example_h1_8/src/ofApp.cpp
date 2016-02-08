@@ -13,13 +13,13 @@ void ofApp::update(){
 	if (ofGetKeyPressed() == true)
 	{
 		// Zorgt voor de mooie opstart
-		stippie.move(-0.0001,0); 
+		stippie.move(-0.005,0); 
 	} else { 
 
 		if (stippie.Speed.x > 0)
 		{
 			// Zorgt voor de geleidelijke afrem systeem
-			stippie.move(0.0001,0); 
+			stippie.move(0.005,0); 
 		}
 	}
 }
